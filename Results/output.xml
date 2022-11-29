@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.0 on win32)" generated="20221129 16:32:53.043" rpa="false" schemaversion="3">
+<suite id="s1" name="Google calc" source="D:\work\robot\Google_calculator_automation-main\Google_calc.robot">
+<test id="s1-t1" name="TC001 - Open WebBrowser and google" line="8">
+<kw name="Set Selenium Speed" library="SeleniumLibrary" type="SETUP">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221129 16:32:53.246" endtime="20221129 16:32:53.246"/>
+</kw>
+<kw name="Open browser to google" library="calc_resources">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221129 16:32:53.247" level="INFO">Opening browser 'edge' to base url 'http://www.google.com'.</msg>
+<status status="PASS" starttime="20221129 16:32:53.247" endtime="20221129 16:32:55.973"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Google</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20221129 16:32:56.477" level="INFO">Page title is 'Google'.</msg>
+<status status="PASS" starttime="20221129 16:32:55.973" endtime="20221129 16:32:56.477"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:53.246" endtime="20221129 16:32:56.477"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn" type="TEARDOWN">
+<arg>'${TEST_STATUS}' == 'FAIL'</arg>
+<arg>Recovery from test case failure</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221129 16:32:56.477" endtime="20221129 16:32:56.478"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:53.245" endtime="20221129 16:32:56.478"/>
+</test>
+<test id="s1-t2" name="TC002 - Search for calculator" line="11">
+<kw name="Set Selenium Speed" library="SeleniumLibrary" type="SETUP">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221129 16:32:56.478" endtime="20221129 16:32:56.478"/>
+</kw>
+<kw name="Find search field and using to search calculator" library="calc_resources">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:q</arg>
+<arg>Calculator</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221129 16:32:56.479" level="INFO">Typing text 'Calculator' into text field 'name:q'.</msg>
+<status status="PASS" starttime="20221129 16:32:56.478" endtime="20221129 16:32:58.037"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>name:btnK</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:32:58.037" level="INFO">Clicking element 'name:btnK'.</msg>
+<status status="PASS" starttime="20221129 16:32:58.037" endtime="20221129 16:33:00.435"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:56.478" endtime="20221129 16:33:00.435"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn" type="TEARDOWN">
+<arg>'${TEST_STATUS}' == 'FAIL'</arg>
+<arg>Recovery from test case failure</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221129 16:33:00.435" endtime="20221129 16:33:00.436"/>
+</kw>
+<status status="PASS" starttime="20221129 16:32:56.478" endtime="20221129 16:33:00.436"/>
+</test>
+<test id="s1-t3" name="TC003 - Simple calculation like 2 + 2 = 4" line="14">
+<kw name="Set Selenium Speed" library="SeleniumLibrary" type="SETUP">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221129 16:33:00.437" endtime="20221129 16:33:00.437"/>
+</kw>
+<kw name="Click calculator button 2" library="calc_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[4]/td[2]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:00.438" level="INFO">Clicking element '//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[4]/td[2]/div/div'.</msg>
+<status status="PASS" starttime="20221129 16:33:00.438" endtime="20221129 16:33:01.478"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:00.437" endtime="20221129 16:33:01.478"/>
+</kw>
+<kw name="Click calculator button +" library="calc_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[4]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:01.479" level="INFO">Clicking element '//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[4]/div/div'.</msg>
+<status status="PASS" starttime="20221129 16:33:01.478" endtime="20221129 16:33:02.513"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:01.478" endtime="20221129 16:33:02.513"/>
+</kw>
+<kw name="Click calculator button 2" library="calc_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[4]/td[2]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:02.514" level="INFO">Clicking element '//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[4]/td[2]/div/div'.</msg>
+<status status="PASS" starttime="20221129 16:33:02.513" endtime="20221129 16:33:03.538"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:02.513" endtime="20221129 16:33:03.538"/>
+</kw>
+<kw name="Click calculator button =" library="calc_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[3]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:03.539" level="INFO">Clicking element '//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[3]/div/div'.</msg>
+<status status="PASS" starttime="20221129 16:33:03.538" endtime="20221129 16:33:04.576"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:03.538" endtime="20221129 16:33:04.576"/>
+</kw>
+<kw name="Verify calculated total" library="calc_resources">
+<arg>4</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${result}</var>
+<arg>//*[@id="cwos"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:05.595" level="INFO">${result} = 4</msg>
+<status status="PASS" starttime="20221129 16:33:04.576" endtime="20221129 16:33:05.595"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${totalamount}</arg>
+<arg>${result}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:33:05.595" endtime="20221129 16:33:05.595"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:04.576" endtime="20221129 16:33:05.595"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn" type="TEARDOWN">
+<arg>'${TEST_STATUS}' == 'FAIL'</arg>
+<arg>Recovery from test case failure</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221129 16:33:05.596" endtime="20221129 16:33:05.596"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:00.437" endtime="20221129 16:33:05.596"/>
+</test>
+<test id="s1-t4" name="TC004 - Clear calculator" line="21">
+<kw name="Set Selenium Speed" library="SeleniumLibrary" type="SETUP">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221129 16:33:05.597" endtime="20221129 16:33:05.597"/>
+</kw>
+<kw name="Clear calculator" library="calc_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[1]/td[4]/div/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:05.598" level="INFO">Clicking element '//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[1]/td[4]/div/div[1]'.</msg>
+<status status="PASS" starttime="20221129 16:33:05.598" endtime="20221129 16:33:06.634"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:05.597" endtime="20221129 16:33:06.634"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn" type="TEARDOWN">
+<arg>'${TEST_STATUS}' == 'FAIL'</arg>
+<arg>Recovery from test case failure</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221129 16:33:06.634" endtime="20221129 16:33:06.635"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:05.597" endtime="20221129 16:33:06.635"/>
+</test>
+<test id="s1-t5" name="TC005 - Second simple calcuation 9 - 8 = 1" line="24">
+<kw name="Set Selenium Speed" library="SeleniumLibrary" type="SETUP">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221129 16:33:06.636" endtime="20221129 16:33:06.636"/>
+</kw>
+<kw name="Click calculator button 9" library="calc_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[2]/td[3]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:06.637" level="INFO">Clicking element '//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[2]/td[3]/div/div'.</msg>
+<status status="PASS" starttime="20221129 16:33:06.636" endtime="20221129 16:33:07.670"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:06.636" endtime="20221129 16:33:07.670"/>
+</kw>
+<kw name="Click calculator button -" library="calc_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[4]/td[4]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:07.671" level="INFO">Clicking element '//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[4]/td[4]/div/div'.</msg>
+<status status="PASS" starttime="20221129 16:33:07.670" endtime="20221129 16:33:08.703"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:07.670" endtime="20221129 16:33:08.703"/>
+</kw>
+<kw name="Click calculator button 8" library="calc_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[2]/td[2]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:08.704" level="INFO">Clicking element '//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[2]/td[2]/div/div'.</msg>
+<status status="PASS" starttime="20221129 16:33:08.704" endtime="20221129 16:33:09.739"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:08.703" endtime="20221129 16:33:09.739"/>
+</kw>
+<kw name="Click calculator button =" library="calc_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[3]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:09.740" level="INFO">Clicking element '//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[3]/div/div'.</msg>
+<status status="PASS" starttime="20221129 16:33:09.739" endtime="20221129 16:33:10.769"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:09.739" endtime="20221129 16:33:10.769"/>
+</kw>
+<kw name="Verify calculated total" library="calc_resources">
+<arg>1</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${result}</var>
+<arg>//*[@id="cwos"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:11.781" level="INFO">${result} = 1</msg>
+<status status="PASS" starttime="20221129 16:33:10.769" endtime="20221129 16:33:11.781"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${totalamount}</arg>
+<arg>${result}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20221129 16:33:11.781" endtime="20221129 16:33:11.781"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:10.769" endtime="20221129 16:33:11.781"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn" type="TEARDOWN">
+<arg>'${TEST_STATUS}' == 'FAIL'</arg>
+<arg>Recovery from test case failure</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221129 16:33:11.782" endtime="20221129 16:33:11.782"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:06.635" endtime="20221129 16:33:11.782"/>
+</test>
+<test id="s1-t6" name="TC006 - Clear calculator" line="31">
+<kw name="Set Selenium Speed" library="SeleniumLibrary" type="SETUP">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221129 16:33:11.784" endtime="20221129 16:33:11.784"/>
+</kw>
+<kw name="Clear calculator" library="calc_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[1]/td[4]/div/div[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20221129 16:33:11.785" level="INFO">Clicking element '//*[@id="rso"]/div[1]/div/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[1]/td[4]/div/div[1]'.</msg>
+<status status="PASS" starttime="20221129 16:33:11.784" endtime="20221129 16:33:12.817"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:11.784" endtime="20221129 16:33:12.817"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn" type="TEARDOWN">
+<arg>'${TEST_STATUS}' == 'FAIL'</arg>
+<arg>Recovery from test case failure</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221129 16:33:12.817" endtime="20221129 16:33:12.818"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:11.783" endtime="20221129 16:33:12.818"/>
+</test>
+<test id="s1-t7" name="TC007 - Close browser" line="34">
+<kw name="Set Selenium Speed" library="SeleniumLibrary" type="SETUP">
+<arg>0.5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20221129 16:33:12.819" endtime="20221129 16:33:12.819"/>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221129 16:33:12.819" endtime="20221129 16:33:15.365"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn" type="TEARDOWN">
+<arg>'${TEST_STATUS}' == 'FAIL'</arg>
+<arg>Recovery from test case failure</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20221129 16:33:15.365" endtime="20221129 16:33:15.366"/>
+</kw>
+<status status="PASS" starttime="20221129 16:33:12.818" endtime="20221129 16:33:15.366"/>
+</test>
+<doc>Simple example using SeleniumLibrary - Test suite</doc>
+<status status="PASS" starttime="20221129 16:32:53.044" endtime="20221129 16:33:15.367"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Google calc">Google calc</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
